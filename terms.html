@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Lizi Network</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF9EBC;
+            --secondary: #A3D9FF;
+            --accent: #FFD166;
+            --light: #FFF9F2;
+            --dark: #5A6D80;
+            --success: #8ACB88;
+            --rounded: 20px;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Comic Neue', cursive;
+            font-weight: 700;
+            color: #FF6B9D;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo-text {
+            font-family: 'Comic Neue', cursive;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 18px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a.active {
+            color: var(--primary);
+        }
+        
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Terms Container */
+        .terms-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .terms-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #FFEAF2 0%, #E6F7FF 100%);
+            border-radius: var(--rounded);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .terms-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><path d="M20,20 Q40,5 60,20 T100,20" stroke="%23FF9EBC" fill="none" stroke-width="2" opacity="0.2"/><circle cx="30" cy="50" r="8" fill="%23A3D9FF" opacity="0.3"/><circle cx="70" cy="30" r="6" fill="%23FFD166" opacity="0.3"/><circle cx="50" cy="70" r="10" fill="%23FF9EBC" opacity="0.3"/></svg>');
+            background-size: 300px;
+            opacity: 0.3;
+        }
+        
+        .terms-header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .terms-header p {
+            color: #7A8A9E;
+            font-size: 18px;
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .last-updated {
+            background-color: white;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-top: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 1;
+            font-weight: 600;
+        }
+        
+        .terms-content {
+            background-color: white;
+            border-radius: var(--rounded);
+            padding: 50px;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+        
+        .terms-section {
+            margin-bottom: 40px;
+        }
+        
+        .terms-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .terms-section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 28px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #F0F0F0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .terms-section h2 i {
+            background: linear-gradient(135deg, var(--primary), #FF7BA3);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+        }
+        
+        .terms-section p, .terms-section li {
+            margin-bottom: 18px;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+        
+        .terms-section ul, .terms-section ol {
+            padding-left: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .terms-section li {
+            margin-bottom: 12px;
+        }
+        
+        .highlight-box {
+            background-color: #F8F9FF;
+            border-left: 5px solid var(--secondary);
+            padding: 25px;
+            border-radius: 0 15px 15px 0;
+            margin: 25px 0;
+        }
+        
+        .warning-box {
+            background-color: #FFF0F0;
+            border-left: 5px solid #FF6B6B;
+            padding: 25px;
+            border-radius: 0 15px 15px 0;
+            margin: 25px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .warning-box i {
+            color: #FF6B6B;
+            font-size: 24px;
+            margin-top: 3px;
+        }
+        
+        .info-note {
+            background-color: #FFF9E6;
+            border: 2px dashed var(--accent);
+            padding: 20px;
+            border-radius: var(--rounded);
+            margin: 25px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .info-note i {
+            color: var(--accent);
+            font-size: 24px;
+            margin-top: 3px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            border-radius: var(--rounded);
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        th, td {
+            padding: 18px 20px;
+            text-align: left;
+            border-bottom: 1px solid #F0F0F0;
+        }
+        
+        th {
+            background-color: #F8F9FF;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:hover {
+            background-color: #FCFCFF;
+        }
+        
+        .company-info-card {
+            background: linear-gradient(135deg, #FFEAF2 0%, #E6F7FF 100%);
+            border-radius: var(--rounded);
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .company-info-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .company-info-card h3 i {
+            background: linear-gradient(135deg, var(--primary), #FF7BA3);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .company-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .company-detail-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .company-detail-item h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(to right, var(--primary), #FF7BA3);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+        }
+        
+        .back-to-home:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 158, 188, 0.3);
+        }
+        
+        /* Agreement Box */
+        .agreement-box {
+            background-color: #F0F7FF;
+            border: 3px solid var(--secondary);
+            border-radius: var(--rounded);
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .agreement-box h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .agreement-box p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2D3748;
+            color: white;
+            padding: 60px 0 30px;
+            border-radius: 40px 40px 0 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a:hover {
+            opacity: 1;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .terms-header h1 {
+                font-size: 36px;
+            }
+            
+            .terms-content {
+                padding: 30px;
+            }
+            
+            .terms-section h2 {
+                font-size: 24px;
+            }
+            
+            .terms-section h2 i {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .terms-header h1 {
+                font-size: 30px;
+            }
+            
+            .terms-content {
+                padding: 20px;
+            }
+            
+            .company-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .agreement-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">LZ</div>
+                <div class="logo-text">Lizi Network</div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#partners">Partners</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="active">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Terms of Service Content -->
+    <div class="terms-container">
+        <div class="terms-header">
+            <h1>Terms of Service</h1>
+            <p>Please read these terms carefully before using our cute mobile games and apps. By using our services, you agree to be bound by these terms.</p>
+            <div class="last-updated">Last updated: September 15, 2023</div>
+        </div>
+        
+        <div class="agreement-box">
+            <h3><i class="fas fa-handshake"></i> Agreement to Terms</h3>
+            <p>By accessing or using our mobile applications and services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree with these terms, please do not use our services.</p>
+            <p>These terms apply to all users of our apps, including visitors, registered users, and others who access our services.</p>
+        </div>
+        
+        <div class="terms-content">
+            <div class="terms-section">
+                <h2><i class="fas fa-gamepad"></i> 1. Our Services</h2>
+                <p>Chengdu Liushu Ion Network Technology Co., Ltd. ("we", "us", "our") develops and publishes cute, entertaining mobile games and applications for global users through Google Play and Apple App Store.</p>
+                
+                <p>Our services include:</p>
+                <ul>
+                    <li>Free-to-play mobile games with optional in-app purchases</li>
+                    <li>Mobile applications with premium features</li>
+                    <li>Ad-supported content and experiences</li>
+                    <li>Subscription-based services (where applicable)</li>
+                </ul>
+                
+                <p>We reserve the right to modify, suspend, or discontinue any part of our services at any time without prior notice. We are not liable for any modification, suspension, or discontinuance of our services.</p>
+                
+                <div class="info-note">
+                    <i class="fas fa-info-circle"></i>
+                    <div>
+                        <p><strong>Please note:</strong> We are a young team of 10 people with an average age of 19, creating cute mobile experiences. Our services are designed to be fun and engaging for users of all ages.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <h2><i class="fas fa-user-circle"></i> 2. User Accounts</h2>
+                <p>Some features of our services may require you to create a user account. When creating an account, you agree to:</p>
+                
+                <ul>
+                    <li>Provide accurate, current, and complete information</li>
+                    <li>Maintain and promptly update your account information</li>
+                    <li>Maintain the security of your account credentials</li>
+                    <li>Accept responsibility for all activities that occur under your account</li>
+                    <li>Notify us immediately of any unauthorized use of your account</li>
+                </ul>
+                
+                <p>You must be at least 13 years old to create an account. If you are under 13, you may only use our services with parental supervision and consent.</p>
+                
+                <p>We reserve the right to suspend or terminate your account if we suspect any violation of these terms or fraudulent activity.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2><i class="fas fa-shopping-cart"></i> 3. In-App Purchases and Subscriptions</h2>
+                <p>Our apps may offer virtual items, premium features, or subscriptions for purchase through Google Play or Apple App Store payment systems.</p>
+                
+                <h3>Payment and Billing</h3>
+                <ul>
+                    <li>All purchases are processed through Google Play or Apple App Store</li>
+                    <li>Prices are displayed in your local currency and include applicable taxes</li>
+                    <li>You authorize the applicable app store to charge your payment method for all purchases</li>
+                    <li>Subscription fees are automatically renewed unless canceled at least 24 hours before the end of the current period</li>
+                </ul>
+                
+                <h3>Refund Policy</h3>
+                <p>All sales are final unless otherwise required by law. We do not provide refunds for in-app purchases, except as required by:</p>
+                <ul>
+                    <li>Google Play refund policies</li>
+                    <li>Apple App Store refund policies</li>
+                    <li>Applicable consumer protection laws in your jurisdiction</li>
+                </ul>
+                
+                <p>To request a refund, please contact Google Play or Apple App Store support directly, as we do not process refunds ourselves.</p>
+                
+                <div class="warning-box">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <p><strong>Important:</strong> Virtual items, currency, and other in-app purchases have no real-world value and cannot be exchanged for cash or transferred between accounts. All purchases are for your personal, non-commercial use only.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <h2><i class="fas fa-ad"></i> 4. Advertising</h2>
+                <p>Our free apps are supported by advertising. By using our services, you consent to receiving advertisements.</p>
+                
+                <h3>Advertising Partners</h3>
+                <p>We work with third-party advertising networks including:</p>
+                <div class="highlight-box">
+                    <ul>
+                        <li>Google AdMob</li>
+                        <li>Meta Audience Network</li>
+                        <li>AppLovin</li>
+                        <li>Pangle</li>
+                        <li>Liftoff</li>
+                        <li>Unity Ads</li>
+                        <li>Chartboost</li>
+                    </ul>
+                </div>
+                
+                <h3>Ad Preferences</h3>
+                <p>You may see personalized or non-personalized ads in our apps. You can control ad preferences through:</p>
+                <ul>
+                    <li>Your device settings (iOS: Settings > Privacy > Tracking; Android: Settings > Google > Ads)</li>
+                    <li>Third-party opt-out tools (e.g., Digital Advertising Alliance opt-out page)</li>
+                    <li>Ad-specific settings within our apps (where available)</li>
+                </ul>
+                
+                <p>Some versions of our apps may offer ad-free experiences through paid subscriptions or one-time purchases.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2><i class="fas fa-copyright"></i> 5. Intellectual Property</h2>
+                <p>All content, features, and functionality of our services are owned by us or our licensors and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+                
+                <h3>Our Rights</h3>
+                <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use our services for personal, non-commercial purposes. This license does not include:</p>
+                <ul>
+                    <li>The right to copy, modify, or create derivative works</li>
+                    <li>The right to distribute, sell, lease, or sublicense our services</li>
+                    <li>The right to reverse engineer, decompile, or disassemble our services</li>
+                    <li>The right to remove any proprietary notices or labels</li>
+                </ul>
+                
+                <h3>User-Generated Content</h3>
+                <p>Some of our apps may allow you to create, upload, or share content. By submitting content, you grant us a worldwide, royalty-free, perpetual license to use, modify, and display that content in connection with our services.</p>
+                
+                <p>You are solely responsible for any content you submit and must ensure it does not violate any laws or third-party rights.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2><i class="fas fa-ban"></i> 6. Prohibited Conduct</h2>
+                <p>When using our services, you agree not to:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Prohibited Activities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Illegal Activities</strong></td>
+                            <td>Use our services for any unlawful purpose or in violation of any laws</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Security Violations</strong></td>
+                            <td>Attempt to hack, reverse engineer, or modify our services; introduce viruses or malicious code</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Unauthorized Access</strong></td>
+                            <td>Access our services through unauthorized means; use automated systems (bots, scripts)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Harassment</strong></td>
+                            <td>Harass, abuse, threaten, or harm other users; share inappropriate content</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Commercial Use</strong></td>
+                            <td>Use our services for commercial purposes without our express permission</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impersonation</strong></td>
+                            <td>Impersonate any person or entity, or falsely state your affiliation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Collection</strong></td>
+                            <td>Collect user information without consent; spam other users</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p>We reserve the right to investigate and take appropriate legal action against anyone who violates these provisions.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2><i class="fas fa-exclamation-triangle"></i> 7. Disclaimers and Limitation of Liability</h2>
+                
+                <h3>Service "As Is"</h3>
+                <p>Our services are provided on an "as is" and "as available" basis without warranties of any kind, either express or implied. We do not warrant that:</p>
+                <ul>
+                    <li>Our services will be uninterrupted, secure, or error-free</li>
+                    <li>Defects will be corrected</li>
+                    <li>Our services are free of viruses or other harmful components</li>
+                    <li>The results of using our services will meet your expectations</li>
+                </ul>
+                
+                <h3>Limitation of Liability</h3>
+                <p>To the maximum extent permitted by law, we shall not be liable for any:</p>
+                <ul>
+                    <li>Indirect, incidental, special, consequential, or punitive damages</li>
+                    <li>Loss of profits, data, use, goodwill, or other intangible losses</li>
+                    <li>Damages resulting from your use or inability to use our services</li>
+                    <li>Unauthorized access to or alteration of your transmissions or data</li>
+                    <li>Statements or conduct of any third party on our services</li>
+                </ul>
+                
+                <p>Our total liability to you for all claims arising from or related to our services shall not exceed the amount you have paid to us in the past 12 months, or $100 if you haven't made any payments.</p>
+                
+                <div class="warning-box">
+                    <i class="fas fa-balance-scale"></i>
+                    <div>
+                        <p><strong>Legal Note:</strong> Some jurisdictions do not allow the exclusion of certain warranties or the limitation of liability for incidental or consequential damages. The above limitations may not apply to you if you reside in such a jurisdiction.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <h2><i class="fas fa-gavel"></i> 8. Termination</h2>
+                <p>We may terminate or suspend your access to our services immediately, without prior notice or liability, for any reason, including but not limited to:</p>
+                
+                <ul>
+                    <li>Violation of these Terms of Service</li>
+                    <li>Fraudulent or illegal activity</li>
+                    <li>Requests by law enforcement or other government agencies</li>
+                    <li>Unexpected technical or security issues</li>
+                    <li>Extended periods of inactivity</li>
+                </ul>
+                
+                <p>Upon termination, your right to use our services will immediately cease. If you wish to terminate your account, you may simply discontinue using our services or delete the app from your device.</p>
+                
+                <p>All provisions of these terms which by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2><i class="fas fa-globe-americas"></i> 9. Governing Law and Dispute Resolution</h2>
+                
+                <h3>Governing Law</h3>
+                <p>These Terms of Service shall be governed by and construed in accordance with the laws of the People's Republic of China, without regard to its conflict of law provisions.</p>
+                
+                <h3>Dispute Resolution</h3>
+                <p>We prefer to resolve disputes informally. If you have a dispute with us, please contact us first at <strong>surperman@lizinetwork.com</strong> and we'll try to resolve it amicably.</p>
+                
+                <p>If we cannot resolve a dispute informally, any legal action or proceeding arising under these terms shall be brought exclusively in the courts located in Chengdu, China.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>For European Union Users:</strong> If you are a consumer residing in the European Union, you may benefit from any mandatory provisions of the law of the country in which you are resident. Nothing in these terms affects your rights as a consumer to rely on such mandatory provisions of local law.</p>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <h2><i class="fas fa-sync-alt"></i> 10. Changes to Terms</h2>
+                <p>We may update these Terms of Service from time to time. We will notify you of any changes by:</p>
+                
+                <ul>
+                    <li>Posting the new Terms of Service on this page</li>
+                    <li>Updating the "Last updated" date at the top of these terms</li>
+                    <li>Providing in-app notifications for significant changes (where possible)</li>
+                </ul>
+                
+                <p>You are advised to review these terms periodically for any changes. Changes to these terms are effective when they are posted on this page.</p>
+                
+                <p>Your continued use of our services after any changes constitutes your acceptance of the updated Terms of Service. If you do not agree to the new terms, please stop using our services.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2><i class="fas fa-file-contract"></i> 11. Miscellaneous</h2>
+                
+                <h3>Entire Agreement</h3>
+                <p>These Terms of Service, together with our Privacy Policy, constitute the entire agreement between you and us regarding our services and supersede all prior agreements and understandings.</p>
+                
+                <h3>Severability</h3>
+                <p>If any provision of these terms is held to be invalid or unenforceable, that provision will be enforced to the maximum extent possible, and the remaining provisions will remain in full force and effect.</p>
+                
+                <h3>Waiver</h3>
+                <p>Our failure to enforce any right or provision of these terms will not be considered a waiver of those rights. The waiver of any such right or provision will be effective only if in writing and signed by our authorized representative.</p>
+                
+                <h3>Assignment</h3>
+                <p>You may not assign or transfer these terms, by operation of law or otherwise, without our prior written consent. We may assign or transfer these terms without restriction.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2><i class="fas fa-envelope"></i> 12. Contact Us</h2>
+                <p>If you have any questions about these Terms of Service, please contact us:</p>
+                
+                <div class="company-info-card">
+                    <h3><i class="fas fa-building"></i> Chengdu Liushu Ion Network Technology Co., Ltd.</h3>
+                    
+                    <div class="company-details">
+                        <div class="company-detail-item">
+                            <h4><i class="fas fa-map-marker-alt"></i> Address</h4>
+                            <p>874, Floor 2, No.240, Fuheyuan 1st Road, Jinniu District 610000 Chengdu, China</p>
+                        </div>
+                        
+                        <div class="company-detail-item">
+                            <h4><i class="fas fa-envelope"></i> Business Cooperation</h4>
+                            <p>yawen@lizinetwork.com</p>
+                        </div>
+                        
+                        <div class="company-detail-item">
+                            <h4><i class="fas fa-headset"></i> Customer Service & Legal</h4>
+                            <p>surperman@lizinetwork.com</p>
+                        </div>
+                        
+                        <div class="company-detail-item">
+                            <h4><i class="fas fa-id-card"></i> D-U-N-S® Number</h4>
+                            <p>620855415</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agreement-box">
+                <h3><i class="fas fa-check-circle"></i> Acceptance Confirmation</h3>
+                <p>By using our services, you confirm that you have read, understood, and agree to be bound by these Terms of Service.</p>
+                <p>Thank you for choosing Lizi Network! We hope you enjoy our cute mobile games and apps.</p>
+            </div>
+            
+            <a href="index.html" class="back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Lizi Network</h3>
+                    <p>Creating super cute mobile games and apps with love and passion. Young team, big dreams!</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 874, Floor 2, No.240, Fuheyuan 1st Road, Jinniu District 610000 Chengdu</p>
+                    <p><strong>D-U-N-S® Number:</strong> 620855415</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> Business Cooperation: yawen@lizinetwork.com</p>
+                    <p><i class="fas fa-headset"></i> Customer Service: surperman@lizinetwork.com</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="index.html#about">About Us</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Our Journey</h3>
+                    <p>We're just getting started! Stay tuned for more adorable apps and games coming soon to app stores near you.</p>
+                    <p>Our idol: <strong>Bill Gates</strong></p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Chengdu Liushu Ion Network Technology Co., Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const navMenu = document.getElementById('navMenu');
+            const isVisible = navMenu.style.display === 'flex';
+            
+            if (isVisible) {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '70px';
+                navMenu.style.right = '20px';
+                navMenu.style.backgroundColor = 'white';
+                navMenu.style.padding = '20px';
+                navMenu.style.borderRadius = 'var(--rounded)';
+                navMenu.style.boxShadow = 'var(--shadow)';
+                navMenu.style.width = '200px';
+                navMenu.style.zIndex = '1000';
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            
+            if (navMenu.style.display === 'flex' && 
+                !navMenu.contains(event.target) && 
+                !mobileMenuBtn.contains(event.target)) {
+                navMenu.style.display = 'none';
+            }
+        });
+        
+        // Update year in copyright
+        document.addEventListener('DOMContentLoaded', function() {
+            const copyrightElement = document.querySelector('.copyright p');
+            if (copyrightElement) {
+                const currentYear = new Date().getFullYear();
+                copyrightElement.innerHTML = copyrightElement.innerHTML.replace('2023', currentYear);
+            }
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
