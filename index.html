@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lizi Network - Cute Mobile Games & Apps</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF9EBC;
+            --secondary: #A3D9FF;
+            --accent: #FFD166;
+            --light: #FFF9F2;
+            --dark: #5A6D80;
+            --success: #8ACB88;
+            --rounded: 20px;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Comic Neue', cursive;
+            font-weight: 700;
+            color: #FF6B9D;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo-text {
+            font-family: 'Comic Neue', cursive;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 18px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a.active {
+            color: var(--primary);
+        }
+        
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #FFEAF2 0%, #E6F7FF 100%);
+            border-radius: 0 0 40px 40px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #7A8A9E;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), #FF7BA3);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 158, 188, 0.3);
+        }
+        
+        .cta-button.secondary {
+            background: linear-gradient(to right, var(--secondary), #7BCAFF);
+            margin-left: 15px;
+        }
+        
+        .hero-image-container {
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+        }
+        
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #FFB347);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: var(--shadow);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-element:nth-child(1) {
+            top: 20px;
+            left: 10px;
+            animation-delay: 0s;
+            background: linear-gradient(135deg, var(--primary), #FF7BA3);
+        }
+        
+        .floating-element:nth-child(2) {
+            top: 120px;
+            right: 30px;
+            animation-delay: 1s;
+            background: linear-gradient(135deg, var(--secondary), #7BCAFF);
+            width: 60px;
+            height: 60px;
+        }
+        
+        .floating-element:nth-child(3) {
+            bottom: 50px;
+            left: 40px;
+            animation-delay: 2s;
+            background: linear-gradient(135deg, var(--success), #6BBF68);
+            width: 70px;
+            height: 70px;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* About Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: var(--rounded);
+            box-shadow: var(--shadow);
+        }
+        
+        .team-stats {
+            background-color: white;
+            border-radius: var(--rounded);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .stat-item h3 {
+            font-size: 42px;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: #F8F9FF;
+            border-radius: 40px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: var(--rounded);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+            color: white;
+        }
+        
+        .feature-card:nth-child(1) .feature-icon {
+            background: linear-gradient(135deg, var(--primary), #FF7BA3);
+        }
+        
+        .feature-card:nth-child(2) .feature-icon {
+            background: linear-gradient(135deg, var(--secondary), #7BCAFF);
+        }
+        
+        .feature-card:nth-child(3) .feature-icon {
+            background: linear-gradient(135deg, var(--accent), #FFB347);
+        }
+        
+        .feature-card:nth-child(4) .feature-icon {
+            background: linear-gradient(135deg, var(--success), #6BBF68);
+        }
+        
+        /* Partners Section */
+        .partners-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .partner-logo {
+            background-color: white;
+            border-radius: 15px;
+            padding: 15px 25px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--dark);
+            transition: transform 0.3s;
+        }
+        
+        .partner-logo:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2D3748;
+            color: white;
+            padding: 60px 0 30px;
+            border-radius: 40px 40px 0 0;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a:hover {
+            opacity: 1;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .cta-button.secondary {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+            
+            .team-stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+        
+        /* Policy Pages */
+        .policy-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .policy-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .policy-header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .policy-header p {
+            color: #7A8A9E;
+            font-size: 18px;
+        }
+        
+        .policy-content {
+            background-color: white;
+            border-radius: var(--rounded);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .policy-section {
+            margin-bottom: 40px;
+        }
+        
+        .policy-section h2 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 24px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #F0F0F0;
+        }
+        
+        .policy-section p, .policy-section li {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .policy-section ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .back-to-home {
+            display: inline-block;
+            margin-top: 30px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .back-to-home i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">LZ</div>
+                <div class="logo-text">Lizi Network</div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Super Cute Mobile Games & Apps for Everyone!</h1>
+                    <p>We're a young, passionate team creating adorable mobile experiences. Our average age is just 19, but we're dreaming big with Bill Gates as our inspiration!</p>
+                    <div>
+                        <a href="#apps" class="cta-button">Explore Our Apps</a>
+                        <a href="#about" class="cta-button secondary">Meet Our Team</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-container">
+                        <div class="floating-element"><i class="fas fa-gamepad"></i></div>
+                        <div class="floating-element"><i class="fas fa-heart"></i></div>
+                        <div class="floating-element"><i class="fas fa-mobile-alt"></i></div>
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Cute mobile games" style="width:100%; border-radius: var(--rounded); box-shadow: var(--shadow);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Our Team</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Young Minds, Big Dreams</h3>
+                    <p>We're a team of 10 creative individuals with a combined age under 200 years and an average age of just 19! Inspired by visionaries like Bill Gates, we're using our minds and hands to create super cute mobile games and applications that bring joy to users worldwide.</p>
+                    <p>Our passion for technology and creativity drives us to build delightful experiences that appeal to all ages. We believe in making technology fun, accessible, and adorable!</p>
+                    <p>Based in Chengdu, China, we're part of the vibrant global tech community, constantly learning and growing together.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Young team working together">
+                </div>
+            </div>
+            
+            <div class="team-stats">
+                <div class="stat-item">
+                    <h3>10</h3>
+                    <p>Team Members</p>
+                </div>
+                <div class="stat-item">
+                    <h3>19</h3>
+                    <p>Average Age</p>
+                </div>
+                <div class="stat-item">
+                    <h3>&lt;200</h3>
+                    <p>Combined Age</p>
+                </div>
+                <div class="stat-item">
+                    <h3>∞</h3>
+                    <p>Creativity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features" id="features">
+        <div class="container">
+            <h2 class="section-title">What We Do</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Cute Design</h3>
+                    <p>We create adorable, eye-catching designs that bring smiles to users' faces. Our games and apps are filled with charming characters and colorful worlds.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Global Distribution</h3>
+                    <p>We publish our apps on both Google Play and Apple App Store, making them available to users worldwide with just a tap.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <h3>Ad Monetization</h3>
+                    <p>We work with top ad networks including Admob, Meta, APPLovin, Pangle, Liftoff, Unity, and Chartboost to deliver relevant, non-intrusive ads.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Easy Payments</h3>
+                    <p>We use Google Play and App Store's built-in payment systems for secure, convenient in-app purchases and subscriptions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="section" id="partners">
+        <div class="container">
+            <h2 class="section-title">Our Partners & Platforms</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">We work with industry-leading platforms to deliver the best experience to our users and maximize our app performance.</p>
+            
+            <div class="partners-logos">
+                <div class="partner-logo">Google Play</div>
+                <div class="partner-logo">Apple App Store</div>
+                <div class="partner-logo">AdMob</div>
+                <div class="partner-logo">Meta</div>
+                <div class="partner-logo">APPLovin</div>
+                <div class="partner-logo">Pangle</div>
+                <div class="partner-logo">Liftoff</div>
+                <div class="partner-logo">Unity</div>
+                <div class="partner-logo">Chartboost</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Lizi Network</h3>
+                    <p>Creating super cute mobile games and apps with love and passion. Young team, big dreams!</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 874, Floor 2, No.240, Fuheyuan 1st Road, Jinniu District 610000 Chengdu</p>
+                    <p><strong>D-U-N-S® Number:</strong> 620855415</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> Business Cooperation: yawen@lizinetwork.com</p>
+                    <p><i class="fas fa-headset"></i> Customer Service: surperman@lizinetwork.com</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="#about">About Us</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Our Journey</h3>
+                    <p>We're just getting started! Stay tuned for more adorable apps and games coming soon to app stores near you.</p>
+                    <p>Our idol: <strong>Bill Gates</strong></p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Chengdu Liushu Ion Network Technology Co., Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Page (hidden by default, accessible via link) -->
+    <div id="privacyPage" style="display: none;">
+        <div class="policy-container">
+            <div class="policy-header">
+                <h1>Privacy Policy</h1>
+                <p>Last updated: September 15, 2023</p>
+            </div>
+            
+            <div class="policy-content">
+                <div class="policy-section">
+                    <p>This Privacy Policy describes how Chengdu Liushu Ion Network Technology Co., Ltd. ("we", "our", or "us") collects, uses, and shares information about you when you use our mobile applications and services.</p>
+                    <p>We are committed to protecting your privacy and ensuring transparency about our data practices. As a young team creating cute mobile games and apps, we take privacy seriously.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Information We Collect</h2>
+                    <p>We may collect the following types of information:</p>
+                    <ul>
+                        <li><strong>Device Information:</strong> We collect device-specific information such as device model, operating system version, unique device identifiers, and mobile network information.</li>
+                        <li><strong>Usage Information:</strong> We collect information about how you interact with our apps, including gameplay data, feature usage, and session duration.</li>
+                        <li><strong>Advertising Data:</strong> To serve personalized ads, we may collect information about your interests and interactions with advertisements in our apps through our advertising partners.</li>
+                        <li><strong>Payment Information:</strong> For in-app purchases, we use Google Play and Apple App Store payment systems. We do not collect or store your payment details directly.</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>How We Use Information</h2>
+                    <p>We use the information we collect to:</p>
+                    <ul>
+                        <li>Provide, maintain, and improve our games and apps</li>
+                        <li>Personalize your experience and show relevant content</li>
+                        <li>Display advertisements through our ad network partners</li>
+                        <li>Process in-app purchases through secure payment systems</li>
+                        <li>Analyze app performance and fix bugs</li>
+                        <li>Comply with legal obligations</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Advertising Partners</h2>
+                    <p>We work with third-party advertising networks including:</p>
+                    <ul>
+                        <li>Google AdMob</li>
+                        <li>Meta Audience Network</li>
+                        <li>AppLovin</li>
+                        <li>Pangle</li>
+                        <li>Liftoff</li>
+                        <li>Unity Ads</li>
+                        <li>Chartboost</li>
+                    </ul>
+                    <p>These partners may collect information to provide personalized ads. You can opt out of personalized advertising through your device settings or directly with our partners.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Data Security</h2>
+                    <p>We implement reasonable security measures to protect your information. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Children's Privacy</h2>
+                    <p>Our apps are designed for users of all ages. For users under 13 (or under 16 in some regions), we comply with applicable children's privacy laws including COPPA and GDPR-K. We do not knowingly collect personal information from children without parental consent.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Changes to This Policy</h2>
+                    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Contact Us</h2>
+                    <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                    <p><strong>Business Cooperation:</strong> yawen@lizinetwork.com</p>
+                    <p><strong>Customer Service:</strong> surperman@lizinetwork.com</p>
+                    <p><strong>Company Address:</strong> 874, Floor 2, No.240, Fuheyuan 1st Road, Jinniu District 610000 Chengdu</p>
+                </div>
+                
+                <a href="index.html" class="back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Page (hidden by default, accessible via link) -->
+    <div id="termsPage" style="display: none;">
+        <div class="policy-container">
+            <div class="policy-header">
+                <h1>Terms of Service</h1>
+                <p>Last updated: September 15, 2023</p>
+            </div>
+            
+            <div class="policy-content">
+                <div class="policy-section">
+                    <p>Welcome to Lizi Network! These Terms of Service ("Terms") govern your use of our mobile games and applications ("Services") provided by Chengdu Liushu Ion Network Technology Co., Ltd.</p>
+                    <p>By accessing or using our Services, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our Services.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Our Services</h2>
+                    <p>We develop and publish cute, entertaining mobile games and applications for global users. Our Services are available through Google Play and Apple App Store.</p>
+                    <p>We reserve the right to modify, suspend, or discontinue any part of our Services at any time without prior notice.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>User Accounts</h2>
+                    <p>Some features of our Services may require you to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>In-App Purchases</h2>
+                    <p>Our Services may offer virtual items or premium features for purchase. All purchases are processed through Google Play or Apple App Store payment systems. Prices are displayed in your local currency.</p>
+                    <p>All sales are final unless otherwise required by law. We do not provide refunds for in-app purchases, except as required by Google Play or Apple App Store policies.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Advertising</h2>
+                    <p>Our Services are supported by advertising. We work with third-party advertising networks to display ads in our apps. These ads may be personalized based on your interests and usage patterns.</p>
+                    <p>By using our Services, you consent to receiving advertisements. Some versions of our apps may offer ad-free experiences through paid subscriptions.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Intellectual Property</h2>
+                    <p>All content, features, and functionality of our Services, including but not limited to graphics, code, designs, and game mechanics, are owned by us or our licensors and are protected by copyright, trademark, and other intellectual property laws.</p>
+                    <p>You may not copy, modify, distribute, sell, or lease any part of our Services without our express written permission.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>User Conduct</h2>
+                    <p>You agree not to:</p>
+                    <ul>
+                        <li>Use our Services for any illegal purpose</li>
+                        <li>Attempt to hack, reverse engineer, or modify our Services</li>
+                        <li>Use automated systems to access our Services</li>
+                        <li>Harass, abuse, or harm other users</li>
+                        <li>Violate any applicable laws or regulations</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Limitation of Liability</h2>
+                    <p>To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our Services.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Changes to Terms</h2>
+                    <p>We may update these Terms from time to time. We will notify you of significant changes by posting the new Terms on this page. Your continued use of our Services after such changes constitutes your acceptance of the new Terms.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Governing Law</h2>
+                    <p>These Terms shall be governed by and construed in accordance with the laws of the People's Republic of China, without regard to its conflict of law provisions.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>Contact Information</h2>
+                    <p>If you have any questions about these Terms, please contact us at:</p>
+                    <p><strong>Business Cooperation:</strong> yawen@lizinetwork.com</p>
+                    <p><strong>Customer Service:</strong> surperman@lizinetwork.com</p>
+                    <p><strong>Company Address:</strong> 874, Floor 2, No.240, Fuheyuan 1st Road, Jinniu District 610000 Chengdu</p>
+                    <p><strong>D-U-N-S® Number:</strong> 620855415</p>
+                </div>
+                
+                <a href="index.html" class="back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            navMenu.style.flexDirection = 'column';
+            navMenu.style.position = 'absolute';
+            navMenu.style.top = '70px';
+            navMenu.style.right = '20px';
+            navMenu.style.backgroundColor = 'white';
+            navMenu.style.padding = '20px';
+            navMenu.style.borderRadius = 'var(--rounded)';
+            navMenu.style.boxShadow = 'var(--shadow)';
+            navMenu.style.width = '200px';
+        });
+        
+        // Handle navigation to privacy and terms pages
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if we're on a policy page
+            const path = window.location.pathname;
+            const isPrivacyPage = path.includes('privacy.html') || window.location.hash === '#privacy';
+            const isTermsPage = path.includes('terms.html') || window.location.hash === '#terms';
+            
+            if (isPrivacyPage) {
+                document.getElementById('privacyPage').style.display = 'block';
+                document.querySelector('header').style.display = 'none';
+                document.querySelector('.hero').style.display = 'none';
+                document.querySelector('#about').style.display = 'none';
+                document.querySelector('#features').style.display = 'none';
+                document.querySelector('#partners').style.display = 'none';
+                document.querySelector('footer').style.display = 'none';
+                document.title = 'Privacy Policy - Lizi Network';
+            } else if (isTermsPage) {
+                document.getElementById('termsPage').style.display = 'block';
+                document.querySelector('header').style.display = 'none';
+                document.querySelector('.hero').style.display = 'none';
+                document.querySelector('#about').style.display = 'none';
+                document.querySelector('#features').style.display = 'none';
+                document.querySelector('#partners').style.display = 'none';
+                document.querySelector('footer').style.display = 'none';
+                document.title = 'Terms of Service - Lizi Network';
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#privacy' || targetId === '#terms') {
+                        // Handle policy pages
+                        if (targetId === '#privacy') {
+                            window.location.href = 'privacy.html';
+                        } else {
+                            window.location.href = 'terms.html';
+                        }
+                        return;
+                    }
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
