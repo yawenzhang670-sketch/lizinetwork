@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Lizi Network</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF9EBC;
+            --secondary: #A3D9FF;
+            --accent: #FFD166;
+            --light: #FFF9F2;
+            --dark: #5A6D80;
+            --success: #8ACB88;
+            --rounded: 20px;
+            --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Comic Neue', cursive;
+            font-weight: 700;
+            color: #FF6B9D;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo-text {
+            font-family: 'Comic Neue', cursive;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 18px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a.active {
+            color: var(--primary);
+        }
+        
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Policy Container */
+        .policy-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .policy-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #FFEAF2 0%, #E6F7FF 100%);
+            border-radius: var(--rounded);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .policy-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><path d="M20,20 Q40,5 60,20 T100,20" stroke="%23FF9EBC" fill="none" stroke-width="2" opacity="0.2"/><circle cx="30" cy="50" r="8" fill="%23A3D9FF" opacity="0.3"/><circle cx="70" cy="30" r="6" fill="%23FFD166" opacity="0.3"/><circle cx="50" cy="70" r="10" fill="%23FF9EBC" opacity="0.3"/></svg>');
+            background-size: 300px;
+            opacity: 0.3;
+        }
+        
+        .policy-header h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .policy-header p {
+            color: #7A8A9E;
+            font-size: 18px;
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .last-updated {
+            background-color: white;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-top: 20px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 1;
+            font-weight: 600;
+        }
+        
+        .policy-content {
+            background-color: white;
+            border-radius: var(--rounded);
+            padding: 50px;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+        
+        .policy-section {
+            margin-bottom: 40px;
+        }
+        
+        .policy-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .policy-section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 28px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #F0F0F0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .policy-section h2 i {
+            background: linear-gradient(135deg, var(--primary), #FF7BA3);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+        }
+        
+        .policy-section p, .policy-section li {
+            margin-bottom: 18px;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+        
+        .policy-section ul, .policy-section ol {
+            padding-left: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .policy-section li {
+            margin-bottom: 12px;
+        }
+        
+        .highlight-box {
+            background-color: #F8F9FF;
+            border-left: 5px solid var(--secondary);
+            padding: 25px;
+            border-radius: 0 15px 15px 0;
+            margin: 25px 0;
+        }
+        
+        .info-note {
+            background-color: #FFF9E6;
+            border: 2px dashed var(--accent);
+            padding: 20px;
+            border-radius: var(--rounded);
+            margin: 25px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .info-note i {
+            color: var(--accent);
+            font-size: 24px;
+            margin-top: 3px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            border-radius: var(--rounded);
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        th, td {
+            padding: 18px 20px;
+            text-align: left;
+            border-bottom: 1px solid #F0F0F0;
+        }
+        
+        th {
+            background-color: #F8F9FF;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:hover {
+            background-color: #FCFCFF;
+        }
+        
+        .company-info-card {
+            background: linear-gradient(135deg, #FFEAF2 0%, #E6F7FF 100%);
+            border-radius: var(--rounded);
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .company-info-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .company-info-card h3 i {
+            background: linear-gradient(135deg, var(--primary), #FF7BA3);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .company-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .company-detail-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .company-detail-item h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .back-to-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(to right, var(--primary), #FF7BA3);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+        }
+        
+        .back-to-home:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 158, 188, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2D3748;
+            color: white;
+            padding: 60px 0 30px;
+            border-radius: 40px 40px 0 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .footer-column a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-column a:hover {
+            opacity: 1;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .policy-header h1 {
+                font-size: 36px;
+            }
+            
+            .policy-content {
+                padding: 30px;
+            }
+            
+            .policy-section h2 {
+                font-size: 24px;
+            }
+            
+            .policy-section h2 i {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .policy-header h1 {
+                font-size: 30px;
+            }
+            
+            .policy-content {
+                padding: 20px;
+            }
+            
+            .company-details {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">LZ</div>
+                <div class="logo-text">Lizi Network</div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#partners">Partners</a></li>
+                    <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Privacy Policy Content -->
+    <div class="policy-container">
+        <div class="policy-header">
+            <h1>Privacy Policy</h1>
+            <p>We care about your privacy. This policy explains how we collect, use, and protect your information when you use our cute mobile games and apps.</p>
+            <div class="last-updated">Last updated: September 15, 2023</div>
+        </div>
+        
+        <div class="policy-content">
+            <div class="policy-section">
+                <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+                <p>Welcome to Lizi Network! This Privacy Policy describes how Chengdu Liushu Ion Network Technology Co., Ltd. ("we", "our", or "us") collects, uses, and shares information about you when you use our mobile applications and services.</p>
+                <p>We are committed to protecting your privacy and ensuring transparency about our data practices. As a young team creating cute mobile games and apps, we take privacy seriously and are committed to complying with applicable privacy laws, including GDPR, CCPA, COPPA, and others.</p>
+                
+                <div class="info-note">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <p><strong>Please note:</strong> Our apps are designed to be cute and fun for all ages, but they are not specifically directed at children under 13. However, we recognize that users of all ages may enjoy our apps, and we take special care to protect the privacy of younger users.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-database"></i> Information We Collect</h2>
+                <p>We may collect different types of information depending on how you interact with our apps:</p>
+                
+                <h3>Information You Provide</h3>
+                <ul>
+                    <li><strong>Account Information:</strong> If you create an account, we may collect your username, email address, and profile information.</li>
+                    <li><strong>Customer Support:</strong> When you contact our customer support, we collect your email address and the content of your message.</li>
+                    <li><strong>Survey Responses:</strong> If you participate in our surveys, we collect the responses you provide.</li>
+                </ul>
+                
+                <h3>Information Collected Automatically</h3>
+                <ul>
+                    <li><strong>Device Information:</strong> We collect device-specific information such as device model, operating system version, unique device identifiers (like IDFA for iOS devices and Advertising ID for Android devices), and mobile network information.</li>
+                    <li><strong>Usage Information:</strong> We collect information about how you interact with our apps, including gameplay data, feature usage, session duration, progress, and in-app purchases.</li>
+                    <li><strong>Technical Information:</strong> We collect IP address, browser type, language settings, and crash logs to help us diagnose and fix technical issues.</li>
+                </ul>
+                
+                <h3>Information from Third Parties</h3>
+                <ul>
+                    <li><strong>Advertising Partners:</strong> Our advertising partners may share information with us about your interactions with ads in our apps.</li>
+                    <li><strong>Analytics Providers:</strong> We use analytics services that collect data about app usage.</li>
+                    <li><strong>Social Media:</strong> If you connect your social media accounts, we may receive information from those platforms.</li>
+                </ul>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-cogs"></i> How We Use Information</h2>
+                <p>We use the information we collect for the following purposes:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Purpose</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Service Delivery</strong></td>
+                            <td>To provide, maintain, and improve our games and apps, including processing in-app purchases and subscriptions.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Personalization</strong></td>
+                            <td>To personalize your experience, recommend content, and remember your preferences and progress.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Advertising</strong></td>
+                            <td>To display relevant advertisements through our advertising partners and measure their effectiveness.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Analytics</strong></td>
+                            <td>To analyze app performance, understand user behavior, and improve our services.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Communication</strong></td>
+                            <td>To respond to your customer support requests and send important service updates.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Security</strong></td>
+                            <td>To detect, prevent, and address technical issues, fraud, or other malicious activity.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Legal Compliance</strong></td>
+                            <td>To comply with applicable laws, regulations, and legal processes.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="highlight-box">
+                    <p><strong>Legal Basis for Processing (For EEA/UK Users):</strong> Our legal basis for collecting and using your information depends on the specific context in which we collect it. We typically rely on:</p>
+                    <ul>
+                        <li><strong>Performance of a contract:</strong> When we need to provide you with our services.</li>
+                        <li><strong>Legitimate interests:</strong> When we have a legitimate interest in processing your data, such as for analytics and security purposes.</li>
+                        <li><strong>Consent:</strong> When you have given us consent to process your data for specific purposes.</li>
+                        <li><strong>Legal obligation:</strong> When we need to comply with legal obligations.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-ad"></i> Advertising and Analytics Partners</h2>
+                <p>We work with third-party advertising and analytics partners to serve ads and analyze app usage. These partners may collect information about your device and usage to provide personalized ads and analytics.</p>
+                
+                <h3>Our Advertising Partners Include:</h3>
+                <div class="highlight-box">
+                    <ul>
+                        <li><strong>Google AdMob</strong> (Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a>)</li>
+                        <li><strong>Meta Audience Network</strong> (Privacy Policy: <a href="https://www.facebook.com/privacy/policy/" target="_blank">https://www.facebook.com/privacy/policy/</a>)</li>
+                        <li><strong>AppLovin</strong> (Privacy Policy: <a href="https://www.applovin.com/privacy/" target="_blank">https://www.applovin.com/privacy/</a>)</li>
+                        <li><strong>Pangle</strong> (Privacy Policy: <a href="https://www.pangleglobal.com/privacy" target="_blank">https://www.pangleglobal.com/privacy</a>)</li>
+                        <li><strong>Liftoff</strong> (Privacy Policy: <a href="https://liftoff.io/privacy-policy/" target="_blank">https://liftoff.io/privacy-policy/</a>)</li>
+                        <li><strong>Unity Ads</strong> (Privacy Policy: <a href="https://unity3d.com/legal/privacy-policy" target="_blank">https://unity3d.com/legal/privacy-policy</a>)</li>
+                        <li><strong>Chartboost</strong> (Privacy Policy: <a href="https://answers.chartboost.com/en-us/articles/200780269" target="_blank">https://answers.chartboost.com/en-us/articles/200780269</a>)</li>
+                    </ul>
+                </div>
+                
+                <h3>Opting Out of Personalized Advertising</h3>
+                <p>You can opt out of personalized advertising by adjusting your device settings:</p>
+                <ul>
+                    <li><strong>iOS Devices:</strong> Go to Settings > Privacy & Security > Tracking and disable "Allow Apps to Request to Track"</li>
+                    <li><strong>Android Devices:</strong> Go to Settings > Google > Ads and enable "Opt out of Ads Personalization"</li>
+                    <li><strong>Web Browsers:</strong> Visit <a href="https://optout.aboutads.info" target="_blank">https://optout.aboutads.info</a> or <a href="https://optout.networkadvertising.org" target="_blank">https://optout.networkadvertising.org</a></li>
+                </ul>
+                
+                <p>You can also reset your advertising identifier (IDFA on iOS or Advertising ID on Android) through your device settings, which will reset the personalized ads you receive.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-share-alt"></i> How We Share Information</h2>
+                <p>We may share your information in the following circumstances:</p>
+                
+                <ul>
+                    <li><strong>Service Providers:</strong> We share information with third-party vendors who help us operate our services, such as hosting providers, analytics services, and customer support platforms.</li>
+                    <li><strong>Advertising Partners:</strong> We share limited information with advertising partners to serve relevant ads and measure ad performance.</li>
+                    <li><strong>Business Transfers:</strong> If we are involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</li>
+                    <li><strong>Legal Requirements:</strong> We may disclose information if required to do so by law or in response to valid legal requests.</li>
+                    <li><strong>Protection of Rights:</strong> We may share information when we believe it's necessary to protect our rights, property, or safety, or that of others.</li>
+                    <li><strong>With Your Consent:</strong> We may share information for other purposes with your consent.</li>
+                </ul>
+                
+                <div class="info-note">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <p><strong>Important:</strong> We do not sell your personal information to third parties. We only share information as described in this Privacy Policy.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-child"></i> Children's Privacy</h2>
+                <p>Our apps are designed for users of all ages, but we take special care to protect the privacy of children:</p>
+                
+                <ul>
+                    <li>We comply with the Children's Online Privacy Protection Act (COPPA) and similar laws worldwide.</li>
+                    <li>For users under 13 (or under 16 in some regions), we do not knowingly collect personal information without verifiable parental consent.</li>
+                    <li>If we learn that we have collected personal information from a child under the relevant age without parental consent, we will take steps to delete that information.</li>
+                    <li>Parents who believe their child has provided us with personal information can contact us at <strong>surperman@lizinetwork.com</strong> to request deletion.</li>
+                </ul>
+                
+                <p>In some of our apps that may appeal to younger audiences, we implement additional safeguards such as:</p>
+                <ul>
+                    <li>Limiting data collection from all users</li>
+                    <li>Disabling personalized advertising for all users</li>
+                    <li>Using contextual advertising (non-personalized ads based on app content)</li>
+                </ul>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-lock"></i> Data Security</h2>
+                <p>We implement reasonable security measures to protect your information from unauthorized access, alteration, disclosure, or destruction. These measures include:</p>
+                
+                <ul>
+                    <li>Encryption of sensitive data in transit and at rest</li>
+                    <li>Regular security assessments and updates</li>
+                    <li>Access controls and authentication mechanisms</li>
+                    <li>Secure development practices</li>
+                </ul>
+                
+                <p>However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security. If you believe your account has been compromised, please contact us immediately at <strong>surperman@lizinetwork.com</strong>.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-globe"></i> International Data Transfers</h2>
+                <p>We are based in China, but our apps are available globally. Your information may be transferred to, and processed in, countries other than your country of residence. These countries may have data protection laws that are different from the laws of your country.</p>
+                
+                <p>When we transfer information from the European Economic Area (EEA), United Kingdom, or Switzerland, we rely on appropriate safeguards such as:</p>
+                <ul>
+                    <li>Standard Contractual Clauses approved by the European Commission</li>
+                    <li>Other legally appropriate mechanisms for international data transfers</li>
+                </ul>
+                
+                <p>By using our apps, you consent to the transfer of your information to countries outside your country of residence, including China and the United States.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-user-check"></i> Your Rights and Choices</h2>
+                <p>Depending on where you live, you may have certain rights regarding your personal information:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Right</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Access</strong></td>
+                            <td>You can request access to the personal information we hold about you.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Correction</strong></td>
+                            <td>You can request correction of inaccurate or incomplete information.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Deletion</strong></td>
+                            <td>You can request deletion of your personal information in certain circumstances.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Restriction</strong></td>
+                            <td>You can request restriction of processing of your information in certain circumstances.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Data Portability</strong></td>
+                            <td>You can request a copy of your information in a structured, machine-readable format.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Objection</strong></td>
+                            <td>You can object to processing of your information in certain circumstances.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Withdraw Consent</strong></td>
+                            <td>You can withdraw consent where we rely on consent for processing.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p>To exercise these rights, please contact us at <strong>surperman@lizinetwork.com</strong>. We will respond to your request within 30 days, as required by applicable law.</p>
+                
+                <p>You also have the right to lodge a complaint with your local data protection authority if you believe we have not complied with applicable data protection laws.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-sync-alt"></i> Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technologies, legal requirements, or other reasons. We will notify you of any material changes by:</p>
+                
+                <ul>
+                    <li>Posting the updated Privacy Policy on this page</li>
+                    <li>Updating the "Last updated" date at the top of this policy</li>
+                    <li>Providing in-app notifications for significant changes</li>
+                </ul>
+                
+                <p>We encourage you to review this Privacy Policy periodically to stay informed about our information practices. Your continued use of our apps after any changes constitutes your acceptance of the updated Privacy Policy.</p>
+            </div>
+            
+            <div class="policy-section">
+                <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+                <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us:</p>
+                
+                <div class="company-info-card">
+                    <h3><i class="fas fa-building"></i> Chengdu Liushu Ion Network Technology Co., Ltd.</h3>
+                    
+                    <div class="company-details">
+                        <div class="company-detail-item">
+                            <h4><i class="fas fa-map-marker-alt"></i> Address</h4>
+                            <p>874, Floor 2, No.240, Fuheyuan 1st Road, Jinniu District 610000 Chengdu, China</p>
+                        </div>
+                        
+                        <div class="company-detail-item">
+                            <h4><i class="fas fa-envelope"></i> Business Cooperation</h4>
+                            <p>yawen@lizinetwork.com</p>
+                        </div>
+                        
+                        <div class="company-detail-item">
+                            <h4><i class="fas fa-headset"></i> Customer Service & Privacy</h4>
+                            <p>surperman@lizinetwork.com</p>
+                        </div>
+                        
+                        <div class="company-detail-item">
+                            <h4><i class="fas fa-id-card"></i> D-U-N-S® Number</h4>
+                            <p>620855415</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="index.html" class="back-to-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Lizi Network</h3>
+                    <p>Creating super cute mobile games and apps with love and passion. Young team, big dreams!</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 874, Floor 2, No.240, Fuheyuan 1st Road, Jinniu District 610000 Chengdu</p>
+                    <p><strong>D-U-N-S® Number:</strong> 620855415</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> Business Cooperation: yawen@lizinetwork.com</p>
+                    <p><i class="fas fa-headset"></i> Customer Service: surperman@lizinetwork.com</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="index.html#about">About Us</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Our Journey</h3>
+                    <p>We're just getting started! Stay tuned for more adorable apps and games coming soon to app stores near you.</p>
+                    <p>Our idol: <strong>Bill Gates</strong></p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Chengdu Liushu Ion Network Technology Co., Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const navMenu = document.getElementById('navMenu');
+            const isVisible = navMenu.style.display === 'flex';
+            
+            if (isVisible) {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+                navMenu.style.flexDirection = 'column';
+                navMenu.style.position = 'absolute';
+                navMenu.style.top = '70px';
+                navMenu.style.right = '20px';
+                navMenu.style.backgroundColor = 'white';
+                navMenu.style.padding = '20px';
+                navMenu.style.borderRadius = 'var(--rounded)';
+                navMenu.style.boxShadow = 'var(--shadow)';
+                navMenu.style.width = '200px';
+                navMenu.style.zIndex = '1000';
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            
+            if (navMenu.style.display === 'flex' && 
+                !navMenu.contains(event.target) && 
+                !mobileMenuBtn.contains(event.target)) {
+                navMenu.style.display = 'none';
+            }
+        });
+        
+        // Update year in copyright
+        document.addEventListener('DOMContentLoaded', function() {
+            const copyrightElement = document.querySelector('.copyright p');
+            if (copyrightElement) {
+                const currentYear = new Date().getFullYear();
+                copyrightElement.innerHTML = copyrightElement.innerHTML.replace('2023', currentYear);
+            }
+            
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
